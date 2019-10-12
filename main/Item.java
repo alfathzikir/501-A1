@@ -2,8 +2,8 @@ package main;
 
 public abstract class Item {
 	
-	public String itemName;
-	public int itemPrice;
+	private String itemName;
+	private int itemPrice;
 	
 	public Item(String itemName, int itemPrice) {
 		this.itemName = itemName;
