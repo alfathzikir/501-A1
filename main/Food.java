@@ -1,13 +1,8 @@
 package main;
 
 
-public class Food {
+public class Food extends Item{
 
-	private String itemName;
-	private int itemPrice;
-	
-
-	
 	public String getItemName() {
 		return itemName;
 	}
