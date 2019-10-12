@@ -4,8 +4,7 @@ package main;
 public class Drink extends Item{
 	
 	public Drink(String itemName, int itemPrice) {
-		this.itemName = itemName;
-		this.itemPrice = itemPrice;
+		super(itemName,itemPrice);
 	}
 	
 	public String getItemName() {
