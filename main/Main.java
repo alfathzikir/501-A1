@@ -21,18 +21,7 @@ public class Main {
  
 		while (MainMenu) {
 			while (SubMenu) {
-					System.out.println("---------------------------------------------------------------------------------------");
-					System.out.println("Hello and Welcome to our Restaurant!");
-					System.out.println("---------------------------------------------------------------------------------------");
-					System.out.println("Please select one of the options.");
-					System.out.println("1: Look at the menu.");
-					System.out.println("---------------------------------------------------------------------------------------");
-					System.out.println("2: Reserve a table.");
-					System.out.println("---------------------------------------------------------------------------------------");
-					System.out.println("3: Order food for pick up.");
-					System.out.println("---------------------------------------------------------------------------------------");
-					System.out.println("4: More about us.");
-					System.out.println("---------------------------------------------------------------------------------------");
+				printInterface();
 					String Selection = input.next();
 					switch (Selection) {
 					case "1":
@@ -69,8 +58,22 @@ public class Main {
                 System.exit(0);
 
             }
-
 		}
+	}
+	
+	public static void printInterface() {
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("Hello and Welcome to our Restaurant!");
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("Please select one of the options.");
+		System.out.println("1: Look at the menu.");
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("2: Reserve a table.");
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("3: Order food for pick up.");
+		System.out.println("---------------------------------------------------------------------------------------");
+		System.out.println("4: More about us.");
+		System.out.println("---------------------------------------------------------------------------------------");
 	}
 
 	private static void reserve(Table[] tableChoice, int tableNum) {
