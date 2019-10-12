@@ -2,7 +2,12 @@ package main;
 
 
 public class Food extends Item{
-
+	
+	public Food(String itemName, int itemPrice) {
+		this.itemName = itemName;
+		this.itemPrice = itemPrice;
+	}
+	
 	public String getItemName() {
 		return itemName;
 	}
