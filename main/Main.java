@@ -10,12 +10,12 @@ public class Main {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		int tableNum = 0;
-        Table[] tableChoice = new Table[5];
-        tableChoice[0] = new Table();
-        tableChoice[1] = new Table();
-        tableChoice[2] = new Table();
-        tableChoice[3] = new Table();
-        tableChoice[4] = new Table();
+        Reservation[] reservation = new Reservation[5];
+        reservation[0] = new Reservation();
+        reservation[1] = new Reservation();
+        reservation[2] = new Reservation();
+        reservation[3] = new Reservation();
+        reservation[4] = new Reservation();
         
         Menu menuItems = new Menu();
  
@@ -29,7 +29,7 @@ public class Main {
 						menuItems.printMenu();
 						break;
 					case "2":
-						reserve(tableChoice, tableNum);
+						reserve(reservation, tableNum);
 						break;
 					case "3":
 						about();
@@ -76,7 +76,7 @@ public class Main {
 		System.out.println("---------------------------------------------------------------------------------------");
 	}
 
-	private static void reserve(Table[] tableChoice, int tableNum) {
+	private static void reserve(Reservation[] reservation, int tableNum) {
         String tableName;
         boolean reserving = true;
         while (reserving){
@@ -84,19 +84,19 @@ public class Main {
         	System.out.println("---------------------------------------------------------------------------------------");
         	System.out.println("Here are all the tables of this restaurant:");
         	System.out.println("---------------------------------------------------------------------------------------");
-        	for (int x = 0; x < tableChoice.length; x++) {
-        		System.out.println("Table " + (x + 1) + " reserved by " + tableChoice[x].getName());
+        	for (int x = 0; x < reservation.length; x++) {
+        		System.out.println("Table " + (x + 1) + " reserved by " + reservation[x].getReservationName());
         	}
         	System.out.println("Enter table number that you want to reserve (1-5):");
         	tableNum = input.nextInt() - 1;
-            boolean isNotAvailable = tableChoice[tableNum].getName() != "noone";
+            boolean isNotAvailable = reservation[tableNum].getReservationName() != "noone";
         	if (isNotAvailable) {
         		System.out.println("Table has already been reserved by someone else please choose another table");
         		break;
         	}
         	System.out.println("Enter reservation name for table " + (tableNum + 1) + " :");
         	tableName = input.next();
-        	tableChoice[tableNum].setName(tableName);
+        	reservation[tableNum].setReservationName(tableName);
         	reserving = false;
         	}
 	}
