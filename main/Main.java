@@ -89,7 +89,8 @@ public class Main {
         	}
         	System.out.println("Enter table number that you want to reserve (1-5):");
         	tableNum = input.nextInt() - 1;
-        	if (tableChoice[tableNum].getName() != "noone") {
+            boolean isNotAvailable = tableChoice[tableNum].getName() != "noone";
+        	if (isNotAvailable) {
         		System.out.println("Table has already been reserved by someone else please choose another table");
         		break;
         	}
